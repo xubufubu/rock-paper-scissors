@@ -12,8 +12,29 @@ function getComputerChoice() {
     } else {
         console.log(randomNumber +" Idk wtf happened")
     }
+
 }
 
 
 console.log(getComputerChoice())
+
+
+function getHumanChoice() {
+    let userChoice = prompt("rock, paper, or scissors?")
+
+    if (userChoice == "rock") {
+        return "rock";
+    } else if (userChoice == "paper") {
+        return "paper";
+    } else if (userChoice == "scissors") {
+        return "scissors";
+    } else {
+        return "something bad happened.";
+    }
+}
+
+console.log(getHumanChoice())
+
+
+
 

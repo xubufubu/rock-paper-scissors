@@ -37,20 +37,32 @@ function playRound(humanChoice, computerChoice) {
 
     if (a == "rock" && b == "scissors" || a == "scissors" && b == "paper" || a == "paper" && b == "rock") {
         humanScore++
-        console.log(`Human Scores!! The overall score is Human: ${humanScore} | Computer: ${computerScore}.`)
+        console.log(`Human Scores!! The overall score is Human: ${humanScore} | Computer: ${computerScore}.`);
     } else if (a == "rock" && b == "rock" || a == "paper" && b == "paper" || a == "scissors" && b == "scissors") {
-        console.log("Draw")
+        console.log("Draw");
     } else if (a == "rock" && b == "paper" || a == "paper" && b == "scissors" || a == "scissors" && b == "rock") {
         computerScore++
-        console.log(`Computer Scores!! The overall score is Human: ${humanScore} | Computer: ${computerScore}.`)
+        console.log(`Computer Scores!! The overall score is Human: ${humanScore} | Computer: ${computerScore}.`);
     } else {
          "error";
     }
 }
 
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function playGame() {
+    playRound(getHumanChoice(), getComputerChoice())
+    playRound(getHumanChoice(), getComputerChoice())
+    playRound(getHumanChoice(), getComputerChoice())
+    playRound(getHumanChoice(), getComputerChoice())
+    playRound(getHumanChoice(), getComputerChoice())
+ 
+    if (humanScore > computerScore) {
+        console.log(`Human Wins!!`);
+    } else if (humanScore < computerScore) {
+        console.log(`Computer Wins!!`);
+    } else if (humanScore == computerScore) {
+        console.log(`The game is a DRAW`);
+    }
+}
 
-
-playRound(humanSelection, computerSelection);
+playGame()

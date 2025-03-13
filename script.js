@@ -1,5 +1,6 @@
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 100)
+    console.log(randomNumber)
 
     if (randomNumber % 3 === 0) {
         return "scissors";
@@ -32,19 +33,18 @@ let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
     let a = humanChoice;
-    console.log(a)
     let b = computerChoice;
-    console.log(b)
-
 
     if (a == "rock" && b == "scissors" || a == "scissors" && b == "paper" || a == "paper" && b == "rock") {
-        return humanScore++
+        humanScore++
+        console.log(`Human Scores!! The overall score is Human: ${humanScore} | Computer: ${computerScore}.`)
     } else if (a == "rock" && b == "rock" || a == "paper" && b == "paper" || a == "scissors" && b == "scissors") {
-        return console.log("Draw")
+        console.log("Draw")
     } else if (a == "rock" && b == "paper" || a == "paper" && b == "scissors" || a == "scissors" && b == "rock") {
-        return computerScore++
+        computerScore++
+        console.log(`Computer Scores!! The overall score is Human: ${humanScore} | Computer: ${computerScore}.`)
     } else {
-        return "error";
+         "error";
     }
 }
 
@@ -54,6 +54,3 @@ const computerSelection = getComputerChoice();
 
 
 playRound(humanSelection, computerSelection);
-
-
-console.log(humanScore, " ", computerScore)
